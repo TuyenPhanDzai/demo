@@ -1,5 +1,6 @@
 package com.example.demo.controller;
 
+import com.example.demo.module.User;
 import org.springframework.web.bind.annotation.*;
 
 @CrossOrigin("*")
@@ -8,8 +9,11 @@ import org.springframework.web.bind.annotation.*;
 public class UserController {
 
     @GetMapping
-    public String getUserInfo() {
-        return "Tuyen";
+    public User getUserInfo() {
+        return User.builder()
+                .id("123")
+                .name("tuyen")
+                .build();
     }
 
 }
